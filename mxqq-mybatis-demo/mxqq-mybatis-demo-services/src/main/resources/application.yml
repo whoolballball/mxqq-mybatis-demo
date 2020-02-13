@@ -4,7 +4,9 @@ server:
 mybatis:
   mapper-locations: classpath:mappers/*Mapper.xml
   type-aliases-package: mxqq.mybatis.**.repo
-
+  configuration:
+    default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+    -- 枚举默认存储枚举的索引（是枚举值得顺序，不是指定的value），而不是名称
 
 
 spring:
