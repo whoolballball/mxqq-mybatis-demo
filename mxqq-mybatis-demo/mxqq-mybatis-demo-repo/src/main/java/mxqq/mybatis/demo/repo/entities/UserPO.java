@@ -1,6 +1,7 @@
 package mxqq.mybatis.demo.repo.entities;
 
 import lombok.Data;
+import mxqq.mybatis.demo.entities.enums.EnmUserStates;
 import org.apache.ibatis.type.Alias;
 
 @Data
@@ -8,4 +9,6 @@ import org.apache.ibatis.type.Alias;
 public class UserPO {
     public String id;
     public String name;
+    public EnmUserStates state;
 }
+

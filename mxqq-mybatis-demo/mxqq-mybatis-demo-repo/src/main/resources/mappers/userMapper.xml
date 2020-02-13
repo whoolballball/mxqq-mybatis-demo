@@ -5,11 +5,27 @@
 
 
     <insert id="addUser" parameterType="userPO2">
-       insert into sysuser (id,name) values (#{id},#{name});
+       insert into sysuser (id,name,state) values (#{id},#{name},#{state});
     </insert>
 
-    <select id="getUser" resultType="String">
+    <select id="getUserCount" resultType="String">
      select count(0) from sysuser;
     </select>
+
+    <select id="getUserById" resultType="userPO2" parameterType="String">
+        select * from sysuser where id=#{id}
+    </select>
+    
+    <insert id="addUserList">
+        insert into sysuser (id,name,state) values
+        <foreach collection="list" item="user" separator=",">
+        <if test="user.name%2==0">
+            (#{user.id},'==0',#{user.state})
+        </if>
+        <if test="user.name%2!=0">
+            (#{user.id},'!=0',#{user.state})
+        </if>
+        </foreach>
+    </insert>
 
 </mapper>
