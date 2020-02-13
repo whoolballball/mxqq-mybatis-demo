@@ -1,9 +1,11 @@
 package mxqq.mybatis.demo.repo;
 
-import org.springframework.stereotype.Repository;
 
-@Repository
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
 public interface UserRepo {
-    String getUser();
+    void addUser();
 
+    String getUser();
 }

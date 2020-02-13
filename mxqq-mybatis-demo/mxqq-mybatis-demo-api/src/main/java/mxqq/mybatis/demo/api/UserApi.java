@@ -5,4 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface UserApi {
     @GetMapping("/user")
     String getUser();
+
+    @GetMapping("/t")
+    String ttt();
 }

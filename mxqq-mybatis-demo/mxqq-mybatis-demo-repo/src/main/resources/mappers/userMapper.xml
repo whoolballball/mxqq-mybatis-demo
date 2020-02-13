@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mxqq.mybatis.demo.repo">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mxqq.mybatis.demo.repo.UserRepo">
+
+    <insert id="addUser">
+       insert into sysuser (id,name) values (1,1);
+    </insert>
 
     <select id="getUser" resultType="String">
-        select 1 from sysuser;
+     select 1 from sysuser;
     </select>
-
 </mapper>
