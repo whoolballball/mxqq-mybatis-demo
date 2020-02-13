@@ -6,13 +6,15 @@ mybatis:
   type-aliases-package: mxqq.mybatis.**.repo
   configuration:
     default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+#枚举默认存储枚举的索引（是枚举值得顺序，不是指定的value），而不是名称
     database-id: mxqqdb
 
 
 spring:
   datasource:
-    username: postgres
-    password: 123456
+    username: dbuser
+    password: dbpass
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://192.168.88.212:5432/mxqqdb
+    url: jdbc:postgresql://ip:port/mxqqdb
+#使用线程池
     type: org.apache.ibatis.datasource.pooled.PooledDataSource
